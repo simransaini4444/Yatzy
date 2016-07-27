@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by Simran on 7/23/2016.
  */
-public class Yatzy {
+    class Yatzy {
     private final int dievalue1;
     private final int dievalue2;
     private final int dievalue3;
@@ -34,8 +34,7 @@ public class Yatzy {
     }
 
     private int[] diceArray() {
-        int dice[] = {dievalue1, dievalue2, dievalue3, dievalue4, dievalue5};
-        return dice;
+        return new int[]{dievalue1, dievalue2, dievalue3, dievalue4, dievalue5};
     }
 
     public int threeOfKind() {
@@ -131,9 +130,10 @@ public class Yatzy {
     }
 
 
-    public int countSamekindAndGiveScore(int c)
+    private int countSamekindAndGiveScore(int c)
     {
         int[] dice = diceArray();
+        Arrays.sort(dice);
         for (int i = 1; i <= 6; i++) {
             int count = 0;
             for (int j = 0; j < 5; j++) {
@@ -145,7 +145,7 @@ public class Yatzy {
         }
         return score;
     }
-    public int sameNumbers(int a)
+    private int sameNumbers(int a)
     {
         int[] dice = diceArray();
         for (int i : dice) {
